@@ -14,16 +14,16 @@ public class RateInAMaze {
         Scanner scanner = new Scanner(System.in);
         int t = scanner.nextInt();
         while (t-- > 0) {
+            System.out.print("Provide the size of the maze : ");
             int n = scanner.nextInt();
             int[][] maze = new int[n][n];
-
+            System.out.println("Provide the maze 0 mean wall and 1 mean path");
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     maze[i][j] = scanner.nextInt();
                 }
             }
             findSolution(maze, n);
-
         }
     }
 
