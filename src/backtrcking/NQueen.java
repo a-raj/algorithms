@@ -8,12 +8,12 @@ public class NQueen {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Provide the size of N for N-Queen Problem: ");
         N = scanner.nextInt();
-        solveNQueen(N);
+        solveNQueen();
     }
 
-    private static void solveNQueen(int n) {
+    private static void solveNQueen() {
         // 0 is default value in JAVA
-        int[][] solution = new int[n][n];
+        int[][] solution = new int[N][N];
 
         if (solveNQueenUtil(0, solution)) {
             for (int i = 0; i < N; i++) {
@@ -47,7 +47,7 @@ public class NQueen {
         return false;
     }
 
-    /* This function is called when column numbers of queens are already placed in the columns from 0 to columns - 1
+    /* This function is called when column numbers of queens are already placed in the columns from 0 to (columns - 1)
        So we need to check only left side of the attacking queen
      */
     private static boolean isSafeQueen(int row, int column, int[][] solution) {
