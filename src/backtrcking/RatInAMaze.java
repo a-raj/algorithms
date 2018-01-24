@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class RateInAMaze {
+public class RatInAMaze {
 
     static final int[] POSSIBLE_MOVES_X = {1, 0, -1, 0};
     static final int[] POSSIBLE_MOVES_Y = {0, 1, 0, -1};
