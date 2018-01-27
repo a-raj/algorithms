@@ -8,7 +8,7 @@ public class SubsetSumWithoutBT {
     public static void main(String[] args) {
         int[] weights = {10, 7, 5, 18, 12, 20, 15};
         int targetSum = 35;
-1        generateSubSet(weights, targetSum);
+        generateSubSet(weights, targetSum);
         System.out.println("total node generated: " + totalNode);
         
     }
@@ -18,7 +18,7 @@ public class SubsetSumWithoutBT {
          subsetSum(weights, tupletVector, 0, 0, 0, targetSum);
     }
 
-    private static void subsetSum(int[] weights, int[] tupletVector, int tupletVectorSize, int sumSoFar, int nodeCount,final int targetSum) {
+        private static void subsetSum(int[] weights, int[] tupletVector, int tupletVectorSize, int sumSoFar, int nodeCount,final int targetSum) {
 
         totalNode++;
         if (targetSum == sumSoFar) {
