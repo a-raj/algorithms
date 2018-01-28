@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+* A Maze is given as N*N binary matrix of blocks where source block is the upper left most block i.e., maze[0][0] and destination block is lower rightmost block i.e., maze[N-1][N-1].
+* A rat starts from source and has to reach destination.
+* The rat can move only in two directions: forward and down.
+* */
 public class RatInAMaze {
 
     static final int[] POSSIBLE_MOVES_X = {1, 0, -1, 0};

@@ -1,7 +1,9 @@
 package backtrcking;
 
 import java.util.Scanner;
-
+/*
+* The N Queen is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other.
+* */
 public class NQueen {
     private static int N;
     public static void main(String[] args) {
