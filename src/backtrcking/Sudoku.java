@@ -28,7 +28,7 @@ public class Sudoku {
         }
     }
 
-    // recursive function for
+    // recursive function
     private static boolean solveSudoku(int[][] grid) {
 
         RowColumn rowColumn = new RowColumn(0 , 0);
@@ -97,7 +97,7 @@ public class Sudoku {
 
 
     /*
-    * Inner class for used so that the value of row and column as passed as a reference
+    * Inner class : so that the value of row and column passed as a reference
     * */
     private static class RowColumn {
         int row;
