@@ -38,7 +38,6 @@ public class LongestCommonSubsequence {
                 ans.append( X[i] );
                 i--;
                 j--;
-                length--;
             }
             else if (lcs[i - 1][j] > lcs[i][j - 1]) i--;
             else j--;
