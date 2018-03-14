@@ -17,6 +17,8 @@ public class BFS {
         graph.addEdge(3, 3);
 
         bfs(2, graph, 4);
+        System.out.println("\n");
+        bfsWithLevels(2, graph, 4);
     }
 
     static void bfs(int s, Graph_AdjacencyList graph, final int v) {
@@ -36,6 +38,32 @@ public class BFS {
                 if (!visited[n]) {
                     visited[n] = true;
                     queue.add(n);
+                }
+
+            }
+        }
+    }
+
+    static void bfsWithLevels(int s, Graph_AdjacencyList graph, final int v) {
+
+        boolean[] visited = new boolean[v];
+
+        Queue<Integer> queue = new LinkedList<>();
+        int[] levels = new int[v];
+
+        visited[s] = true;
+        queue.add(s);
+        levels[s] = 0;
+
+        while ( !queue.isEmpty() ) {
+            s = queue.poll();
+            System.out.println("vertex " + s + "\t levels : " + levels[s]);
+
+            for (Integer n : graph.getAdjacencyList()[s]) {
+                if (!visited[n]) {
+                    visited[n] = true;
+                    queue.add(n);
+                    levels[n] = levels[s] + 1;
                 }
 
             }
