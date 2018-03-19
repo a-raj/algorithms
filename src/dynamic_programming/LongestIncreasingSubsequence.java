@@ -6,9 +6,7 @@ public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         int arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 };
 
-        long time1 = System.currentTimeMillis();
         System.out.println(find_lis(arr));
-        System.out.println(System.currentTimeMillis() - time1);
     }
 
     private static int find_lis(int[] arr) {

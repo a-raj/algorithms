@@ -18,7 +18,7 @@ class BinaryTree {
 
         printPostOrder(node.left);
         printPostOrder(node.right);
-        System.out.print(node.data + " ");
+        System.out.print(node.key + " ");
     }
 
     // Root Left Right
@@ -26,7 +26,7 @@ class BinaryTree {
 
         if (node == null) return;
 
-        System.out.printf(node.data + " ");
+        System.out.printf(node.key + " ");
         printPreOrder(node.left);
         printPreOrder(node.right);
     }
@@ -37,7 +37,7 @@ class BinaryTree {
         if (node == null) return;
 
         printInOrder(node.left);
-        System.out.printf(node.data + " ");
+        System.out.printf(node.key + " ");
         printInOrder(node.right);
     }
 
@@ -57,7 +57,7 @@ class BinaryTree {
         if (root == null) return;
 
         if (level == 1)
-            System.out.printf(root.data + " ");
+            System.out.printf(root.key + " ");
         else if (level > 1) {
             printGivenLevel(root.left, level - 1);
             printGivenLevel(root.right, level - 1);
@@ -89,7 +89,7 @@ class BinaryTree {
         while (!queue.isEmpty()) {
             Node node = queue.poll();
 
-            System.out.print(node.data + " ");
+            System.out.print(node.key + " ");
 
             if (node.left != null) queue.add(node.left);
 

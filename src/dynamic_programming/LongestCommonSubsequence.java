@@ -15,8 +15,8 @@ public class LongestCommonSubsequence {
 
         int[][] lcs = new int[m + 1][n + 1];
 
+        // filling lcs in bottom up manner
         for (int i = 0; i <= m; i++) {
-
             for (int j = 0; j <= n; j++) {
 
                 if (i == 0 || j == 0) lcs[i][j] = 0;
