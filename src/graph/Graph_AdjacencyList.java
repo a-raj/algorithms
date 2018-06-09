@@ -7,15 +7,16 @@ public class Graph_AdjacencyList {
     private int v; //No of vertices
     private LinkedList<Integer>[] adjacencyList;
 
-    public Graph_AdjacencyList(int v) {
+    @SuppressWarnings("unchecked")
+	Graph_AdjacencyList(int v) {
         this.v = v;
         adjacencyList = new LinkedList[v];
         for (int i = 0; i < v; i++) {
-            adjacencyList[i] = new LinkedList();
+            adjacencyList[i] = new LinkedList<>();
         }
     }
 
-    public void addEdge(int v, int w) {
+    void addEdge(int v, int w) {
         adjacencyList[v].add(w);
     }
 
@@ -23,7 +24,7 @@ public class Graph_AdjacencyList {
         return v;
     }
 
-    public LinkedList<Integer>[] getAdjacencyList() {
+    LinkedList<Integer>[] getAdjacencyList() {
         return adjacencyList;
     }
 }

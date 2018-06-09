@@ -1,7 +1,5 @@
 package graph;
 
-import java.util.Stack;
-
 public class DFS {
 
     public static void main(String[] args) {
@@ -26,6 +24,7 @@ public class DFS {
 
     private static void dfsRecursive(Graph_AdjacencyList graph, int start, int noOfNodes, boolean[] visited) {
 
+    	// Mark visited
         visited[start] = true;
 
         System.out.println(start + " ");
