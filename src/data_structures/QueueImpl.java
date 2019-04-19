@@ -5,20 +5,20 @@ public class QueueImpl {
 	private int front;
 	private int rear;
 	private int size;
-	private int capaicity;
+	private int capacity;
 	private int[] arr;
 	
-	public QueueImpl(int capaicity) {
+	public QueueImpl(int capacity) {
 		
-		this.capaicity = capaicity;
+		this.capacity = capacity;
 		this.size = 0;
 		this.front = this.size;
-		this.rear = capaicity - 1;
-		this.arr = new int[capaicity];
+		this.rear = capacity - 1;
+		this.arr = new int[capacity];
 	}
 	
 	boolean isFull() {
-		return this.size == this.capaicity;
+		return this.size == this.capacity;
 	}
 	
 	boolean isEmpty() {
@@ -30,7 +30,7 @@ public class QueueImpl {
 		if (this.isFull()) 
 			return;
 		
-		this.rear = (this.rear + 1) % this.capaicity;
+		this.rear = (this.rear + 1) % this.capacity;
 		this.arr[rear] = item;
 		this.size++;
 			
@@ -42,7 +42,7 @@ public class QueueImpl {
 			return Integer.MAX_VALUE;
 		
 		int item = this.arr[this.front];
-		this.front = (this.front + 1) % this.capaicity;
+		this.front = (this.front + 1) % this.capacity;
 		this.size--;
 		return item;
 		

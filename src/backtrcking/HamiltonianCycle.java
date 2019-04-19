@@ -41,7 +41,7 @@ public class HamiltonianCycle {
 
         if (pos == V) {
             // if there is an edge from the last included vertex to the first vertex then return true else false
-            return (graph[path[pos - 1]][path[0]] == 1);
+            return (graph[ path[ pos - 1 ] ][ path[0] ] == 1);
         }
 
         // Try different vertex as next candidate in hamiltonian cycle

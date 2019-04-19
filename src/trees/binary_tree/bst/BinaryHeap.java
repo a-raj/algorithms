@@ -31,20 +31,25 @@ public class BinaryHeap {
 	
 	// A recursive function to heapify subtree with root at given index
 	// This method assumes that subtree is already heapify
-	void minHeapify(int i) {
+	private void minHeapify(int i) {
 		
 		int left = left(i);
 		int right = right(i);
 		int smallest = i;
-		
+
+		// Find the smallest if it is left child or right child
 		if (left < heapSize && arr[left] < arr[i]) {
 			smallest = left;
 		}
 		if (right < heapSize && arr[right] < arr[smallest]) {
-			smallest = i;
+			smallest = right;
 		}
+
+		// if samllest is not less it self then swap it with smallest
+		// and now repeat for the new smallest wheter it is correct or not
 		if (smallest != i) {
 			swap(arr, i, smallest);
+
 			minHeapify(smallest);
 		}
 	}
@@ -62,6 +67,7 @@ public class BinaryHeap {
 		arr[i] = key;
 		
 		// Fix the min heap property if its violated
+		// swap up if  paresnt is larger than the child and we don't reach at the top
 		while (i != 0 && arr[ parent(i) ] > arr[i]) {
 			swap(arr, i, parent(i));
 			i = parent(i);
@@ -69,18 +75,21 @@ public class BinaryHeap {
 	}
 	
 	
-	void decreaseKey(int i, int newValue) {
+	private void decreaseKey(int i, int newValue) {
 		
 		arr[i] = newValue;
-		
+
+		// Put the value at the top
 		while (i != 0 && arr[ parent(i) ] > arr[i]) {
+
 			swap(arr, i, parent(i));
 			i = parent(i);
 		}
 	}
 	
 	
-	int extractMin() {
+	private int extractMin() {
+
 		if (heapSize <= 0) {
 			return Integer.MAX_VALUE;
 		}
@@ -89,21 +98,27 @@ public class BinaryHeap {
 			heapSize--;
 			return arr[heapSize];
 		}
-		
+
+		// We have Negative infinity at the top so we replace it with the last value of heap
 		int root = arr[0];
 		arr[0] = arr[ heapSize - 1 ];
 		heapSize--;
-		minHeapify(0);;
+
+		// We might have break the heap to heapify it
+		minHeapify(0);
+
 		return root;
 	}
-	
+
+
 	void deleteKey(int i) {
+
+		// mark the deleted value as Negative Infinity and put it at the top
 		decreaseKey(i, Integer.MIN_VALUE);
+
 		extractMin();
 	}
-	
-	
-	
+
 
 	private void swap(int[] arr, int i, int j) {
 		
@@ -111,7 +126,8 @@ public class BinaryHeap {
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
-		
+
+
 	public static void main(String[] args) {
 		BinaryHeap h = new BinaryHeap(11);
 		h.insertKey(3);

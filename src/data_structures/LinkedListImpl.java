@@ -51,8 +51,6 @@ public class LinkedListImpl {
 		
 		last.next = new Node(data);
 		size++;
-		return;
-		
 	}
 	
 	public boolean deleteNode(int key) {
@@ -64,7 +62,8 @@ public class LinkedListImpl {
 			head = temp.next;
 			return true;
 		}
-		
+
+		// iterate until the end or key matches
 		while(temp != null && temp.data != key) {
 			previous = temp;
 			temp = temp.next;
@@ -73,7 +72,8 @@ public class LinkedListImpl {
 		if (temp == null) {
 			return false;
 		}
-		
+
+		// temp has the key
 		previous.next = temp.next;
 		return true;
 		
