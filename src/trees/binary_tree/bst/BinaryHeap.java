@@ -45,7 +45,7 @@ public class BinaryHeap {
 			smallest = right;
 		}
 
-		// if samllest is not less it self then swap it with smallest
+		// if smallest is not less it self then swap it with smallest
 		// and now repeat for the new smallest wheter it is correct or not
 		if (smallest != i) {
 			swap(arr, i, smallest);
