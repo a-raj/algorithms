@@ -9,7 +9,9 @@ public class VerticalOrderBinaryTree {
 
     private static Map<Integer, List<Integer>> resultMap = new TreeMap<>();
 
-    // Trick is pre-order traversal with keep track of level
+    // Trick is pre-order traversal with keep track of level in a map
+    // when we go left we dec the level
+    // when we go right we increase the level
     public void verticalOrder(Node node, int level) {
 
         if (node == null) return;

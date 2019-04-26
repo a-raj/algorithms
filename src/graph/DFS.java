@@ -19,10 +19,10 @@ public class DFS {
 
         boolean[] visited = new boolean[noOfNodes];
 
-        dfsRecursive(graph, start, noOfNodes, visited);
+        dfsRecursive(graph, start, visited);
     }
 
-    private static void dfsRecursive(Graph_AdjacencyList graph, int start, int noOfNodes, boolean[] visited) {
+    private static void dfsRecursive(Graph_AdjacencyList graph, int start, boolean[] visited) {
 
     	// Mark visited
         visited[start] = true;
@@ -32,7 +32,7 @@ public class DFS {
         // Recurse all the vertices adjacent to this vertex
         for (int v : graph.getAdjacencyList()[start]) {
             if ( !visited[v] ) {
-                dfsRecursive(graph, v, noOfNodes, visited);
+                dfsRecursive(graph, v, visited);
             }
         }
     }
