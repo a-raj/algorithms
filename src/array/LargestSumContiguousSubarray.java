@@ -1,24 +1,29 @@
 package array;
 
+import java.util.Scanner;
+
 class LargestSumContiguousSubarray {
     public static void main(String[] args) {
-        int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
-        findLargestSumContiguousSubarray(arr, arr.length);
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int N = sc.nextInt();
+            int[] arr = new int[N];
+            for (int i = 0; i < N; i++) {
+                arr[i] = sc.nextInt();
+            }
+            findLargestSumContiguousSubarray(arr);
+        }
 
     }
 
-    private static void findLargestSumContiguousSubarray(int[] arr, int length) {
-        
-        int maxSoFar = arr[0];
-        int currMax = arr[0];
-        
-        for (int i = 1; i < length; i++) {
-            // Check whether the current max is greater or the after adding the present value to the current max
-            currMax = Math.max(currMax, currMax + arr[i]);
-
-            // Update max so far
-            maxSoFar = Math.max(currMax, maxSoFar);
+    private static void findLargestSumContiguousSubarray(int[] arr) {
+        int sum = Integer.MIN_VALUE, currSum = 0;
+        for (int value : arr) {
+            currSum += value;
+            sum = Math.max(sum, currSum);
+            currSum = Math.max(currSum, 0);
         }
-        System.out.println(maxSoFar);
+        System.out.println(sum);
     }
 }

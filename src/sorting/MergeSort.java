@@ -27,7 +27,7 @@ public class MergeSort {
 
     private static void merge(int[] array, int low, int mid, int high) {
 
-        int temp[] = new int[high + 1];
+        int[] temp = new int[high + 1];
         int i = low;
         int j = mid +1 ;
         int k = low ;

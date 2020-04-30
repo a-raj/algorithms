@@ -1,34 +1,31 @@
 package array;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
+// Given an array of distinct integers. The task is to count all the triplets such that sum of two elements equals the third element.
 public class CountTheTriplets {
 
     public static void main(String[] args) {
-        int[] arr = {5, 32, 1, 7, 10, 50, 19, 21, 2};
+        int[] arr = {7,2,5,4,3,6,1,9,10,12};
         countTheTriplets(arr);
 
     }
 
     private static void countTheTriplets(int[] arr) {
-        Arrays.sort(arr);
-        int n = arr.length;
+
+        int N = arr.length;
         int count = 0;
-        for (int i = n - 1; i >= 0 ; i--) {
-            int left = 0;
-            int right  = i - 1;
+        // value and its index
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < N; i++)
+            map.put(arr[i], i);
 
-            while (left < right) {
-                if (arr[left] + arr[right] == arr[i]) {
+        for (int i = 0; i < N; i++) {
+            for (int j = i + 1; j < N; j++) {
+                int sum = arr[i] + arr[j];
+                if (map.containsKey(sum))
                     count++;
-                    //System.out.println("");
-                }
-
-                if (arr[left] + arr[right] < arr[i]) {
-                    left++;
-                }
-                else
-                    right--;
             }
         }
         System.out.println(count);
